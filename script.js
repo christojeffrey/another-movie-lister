@@ -1,5 +1,4 @@
 KeywordInput = document.querySelector(".KeywordInput");
-
 SearchButton = document.querySelector(".SearchButton");
 ListOfMovies = document.querySelector(".ListOfMovies");
 
@@ -52,11 +51,11 @@ function InsertToHTML(MoviesData) {
       //   console.log(element);
       //   console.log(element.Title);
       //inserting individual item
-      image = '<img src="' + element.Poster + '">';
-      title = element.Title;
-      year = element.Year;
-      button = "<button class='DetailButton'" + "id = '" + element.imdbID + "'>" + "detail" + "</button>";
-      tobeinserted += "<div>" + image + title + year + button + "</div>";
+      image = '<div class="CardImage"><img src="' + element.Poster + '"alt="' + element.Title + '"></div>';
+      title = '<div class="CardTitle">' + element.Title + "</div>";
+      year = '<div class="CardSub">' + element.Year + "</div>";
+      button = "<div class='CardButton'><button class='DetailButton'" + "id = '" + element.imdbID + "'>" + "detail" + "</button></div>";
+      tobeinserted += "<div class='MovieCard'>" + title + year + image + button + "</div>";
 
       //inserting individual item done
       //   console.log(tobeinserted);
@@ -69,7 +68,7 @@ function InsertToHTML(MoviesData) {
 //detailButton
 function PreparingButton() {
   console.log("preparing button");
-  ListOfButton = document.querySelectorAll(".DetailButton");
+  ListOfButton = document.querySelectorAll(".CardButton");
   ListOfButton.forEach((element) => {
     console.log("id =", element.id);
     imdbID = element.id;
@@ -90,9 +89,12 @@ async function ShowDetail(imdbID) {
   });
 }
 function insertDetail(detail) {
-  button = "<button class='ClosePopUpButton'" + "'>" + "close" + "</button>";
-
-  tobeinserted = "<div>" + detail.Plot + button + "</div>";
+  button = "<div><button class='ClosePopUpButton'" + "'>" + "close" + "</button></div>";
+  title = "<div class='CardTitle'>" + detail.Title + "</div>";
+  country = "<div class='CardSub'>" + detail.Country + "</div>";
+  genre = "<div class = 'CardSub'>" + detail.Genre + "</div>";
+  plot = "<div class = 'CardPlot'>" + detail.Plot + "</div>";
+  tobeinserted = "<div>" + title + plot + country + genre + button + "</div>";
   document.querySelector(".popup").innerHTML = tobeinserted;
   console.log("detail insertion done");
 }

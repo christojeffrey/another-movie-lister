@@ -1,13 +1,101 @@
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background: #e7e7e7;
+}
+img {
+  /* biar fit sama divnya */
+  max-width: 90%;
+  max-height: 90%;
+}
+.bar {
+  margin: 2%;
+  justify-content: center;
+  font-size: x-large;
+  text-align: center;
+}
+.KeywordInput {
+  font-size: x-large;
+}
+.SearchButton {
+  font-size: x-large;
+}
+.ListOfMovies {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 1% 1%;
+}
+.MovieCard {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background: white;
+  padding: 5%;
+  /* background-color: blue; */
+  margin: 1%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+.MovieCard:hover {
+  transform: scale(1.02);
+}
+.CardTitle {
+  color: #4caf50;
+  padding: 5% 10% 2% 10%;
+  font-size: larger;
+}
+.CardSub {
+  padding: 0% 10% 3% 10%;
+  /* color: #e7e7e7; */
+}
+.CardImage {
+  text-align: center;
+}
+.CardButton {
+  text-align: center;
+}
+.DetailButton {
+  /* padding: 0;
+  border: none; */
+  background: none;
+  transition-duration: 0.4s;
+  font-size: large;
+  margin: 5%;
+}
+.DetailButton:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+.CardPlot {
+  padding: 0% 10% 3% 10%;
+  font-weight: 400;
+}
 .popup {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 25%;
   left: 25%;
   width: 50%;
   height: 50%;
   padding: 16px;
-  border: 16px solid orange;
+  border: 1px solid black;
   background-color: white;
-  z-index: 1002;
+  /* z-index: 1002; */
   overflow: auto;
+}
+footer {
+  padding: 3%;
+  text-align: center;
+}
+.ClosePopUpButton {
+  /* padding: 0;
+  border: none; */
+  background: none;
+  transition-duration: 0.4s;
+  font-size: large;
+  margin: 10%;
+}
+.ClosePopUpButton:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
 }
