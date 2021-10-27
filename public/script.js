@@ -21,9 +21,9 @@ async function UpdateUI() {
 async function getData(datatype, arg) {
   //data type bisa movielist bisa detail. kalo movie list, argumennya keywordnya, kalo detail, argumennya imdbID nya
   if (datatype == "movielist") {
-    url = "http://www.omdbapi.com/?apikey=8a501eb9&s=" + arg;
+    url = "https://www.omdbapi.com/?apikey=8a501eb9&s=" + arg;
   } else {
-    url = "http://www.omdbapi.com/?apikey=8a501eb9&i=" + arg;
+    url = "https://www.omdbapi.com/?apikey=8a501eb9&i=" + arg;
   }
   //melakukan search dan mengembalikan object yg didapat dari search
   keyword = KeywordInput.value;
